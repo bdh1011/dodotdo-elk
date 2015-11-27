@@ -1,0 +1,126 @@
+[2015-11-19 16:19:33,419][INFO ][node                     ] [Kwannon] version[2.0.0], pid[7030], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-19 16:19:33,419][INFO ][node                     ] [Kwannon] initializing ...
+[2015-11-19 16:19:33,599][INFO ][plugins                  ] [Kwannon] loaded [], sites []
+[2015-11-19 16:19:33,788][INFO ][env                      ] [Kwannon] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-19 16:19:36,130][INFO ][node                     ] [Kwannon] initialized
+[2015-11-19 16:19:36,130][INFO ][node                     ] [Kwannon] starting ...
+[2015-11-19 16:19:36,199][INFO ][transport                ] [Kwannon] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2015-11-19 16:19:36,208][INFO ][discovery                ] [Kwannon] elasticsearch/2htJtJ4vSkeTd7lI76gRDQ
+[2015-11-19 16:19:38,179][INFO ][node                     ] [Kwannon] stopping ...
+[2015-11-19 16:19:38,188][INFO ][node                     ] [Kwannon] stopped
+[2015-11-19 16:19:38,189][INFO ][node                     ] [Kwannon] closing ...
+[2015-11-19 16:19:38,200][INFO ][node                     ] [Kwannon] closed
+[2015-11-19 16:21:24,135][INFO ][node                     ] [Albert] version[2.0.0], pid[7124], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-19 16:21:24,135][INFO ][node                     ] [Albert] initializing ...
+[2015-11-19 16:21:24,264][INFO ][plugins                  ] [Albert] loaded [], sites []
+[2015-11-19 16:21:24,457][INFO ][env                      ] [Albert] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-19 16:21:26,669][INFO ][node                     ] [Albert] initialized
+[2015-11-19 16:21:26,669][INFO ][node                     ] [Albert] starting ...
+[2015-11-19 16:21:26,721][INFO ][transport                ] [Albert] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2015-11-19 16:21:26,730][INFO ][discovery                ] [Albert] elasticsearch/KZAMJw1sQnWE8-7nDH-a2Q
+[2015-11-19 16:21:29,792][INFO ][cluster.service          ] [Albert] new_master {Albert}{KZAMJw1sQnWE8-7nDH-a2Q}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-11-19 16:21:29,815][INFO ][http                     ] [Albert] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2015-11-19 16:21:29,815][INFO ][node                     ] [Albert] started
+[2015-11-19 16:21:29,831][INFO ][gateway                  ] [Albert] recovered [0] indices into cluster_state
+[2015-11-19 16:21:49,464][DEBUG][action.admin.indices.create] [Albert] [_shutdown] failed to create
+[_shutdown] InvalidIndexNameException[Invalid index name [_shutdown], must not start with '_']
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService.validateIndexName(MetaDataCreateIndexService.java:173)
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService.validate(MetaDataCreateIndexService.java:512)
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService.access$200(MetaDataCreateIndexService.java:90)
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService$2.execute(MetaDataCreateIndexService.java:231)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:388)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:225)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:188)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-11-19 16:21:49,469][INFO ][rest.suppressed          ] /_shutdown Params: {index=_shutdown}
+[_shutdown] InvalidIndexNameException[Invalid index name [_shutdown], must not start with '_']
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService.validateIndexName(MetaDataCreateIndexService.java:173)
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService.validate(MetaDataCreateIndexService.java:512)
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService.access$200(MetaDataCreateIndexService.java:90)
+	at org.elasticsearch.cluster.metadata.MetaDataCreateIndexService$2.execute(MetaDataCreateIndexService.java:231)
+	at org.elasticsearch.cluster.service.InternalClusterService$UpdateTask.run(InternalClusterService.java:388)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.runAndClean(PrioritizedEsThreadPoolExecutor.java:225)
+	at org.elasticsearch.common.util.concurrent.PrioritizedEsThreadPoolExecutor$TieBreakingPrioritizedRunnable.run(PrioritizedEsThreadPoolExecutor.java:188)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-11-19 17:02:22,824][INFO ][node                     ] [Albert] stopping ...
+[2015-11-19 17:02:22,836][INFO ][node                     ] [Albert] stopped
+[2015-11-19 17:02:22,836][INFO ][node                     ] [Albert] closing ...
+[2015-11-19 17:02:22,845][INFO ][node                     ] [Albert] closed
+[2015-11-19 17:02:43,825][INFO ][node                     ] [Lifter] version[2.0.0], pid[7269], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-19 17:02:43,826][INFO ][node                     ] [Lifter] initializing ...
+[2015-11-19 17:02:43,952][INFO ][plugins                  ] [Lifter] loaded [], sites []
+[2015-11-19 17:02:44,129][INFO ][env                      ] [Lifter] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-19 17:02:46,146][INFO ][node                     ] [Lifter] initialized
+[2015-11-19 17:02:46,146][INFO ][node                     ] [Lifter] starting ...
+[2015-11-19 17:02:46,229][INFO ][transport                ] [Lifter] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2015-11-19 17:02:46,237][INFO ][discovery                ] [Lifter] elasticsearch/J2W5yMs8R9K2i2yU9XlWpA
+[2015-11-19 17:02:49,278][INFO ][cluster.service          ] [Lifter] new_master {Lifter}{J2W5yMs8R9K2i2yU9XlWpA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-11-19 17:02:49,302][INFO ][http                     ] [Lifter] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2015-11-19 17:02:49,302][INFO ][node                     ] [Lifter] started
+[2015-11-19 17:02:49,309][INFO ][gateway                  ] [Lifter] recovered [0] indices into cluster_state
+[2015-11-19 17:20:53,731][INFO ][cluster.metadata         ] [Lifter] [.kibana] creating index, cause [api], templates [], shards [1]/[1], mappings [config]
+[2015-11-19 17:23:09,617][INFO ][cluster.metadata         ] [Lifter] [.kibana] create_mapping [index-pattern]
+[2015-11-19 17:23:10,028][INFO ][rest.suppressed          ] /logstash-*/_mapping/field/* Params: {index=logstash-*, allow_no_indices=false, include_defaults=true, _=1447953778784, fields=*, ignore_unavailable=false}
+[logstash-*] IndexNotFoundException[no such index]
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver$WildcardExpressionResolver.resolve(IndexNameExpressionResolver.java:630)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:127)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:71)
+	at org.elasticsearch.action.admin.indices.mapping.get.TransportGetFieldMappingsAction.doExecute(TransportGetFieldMappingsAction.java:57)
+	at org.elasticsearch.action.admin.indices.mapping.get.TransportGetFieldMappingsAction.doExecute(TransportGetFieldMappingsAction.java:40)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.support.AbstractClient$IndicesAdmin.execute(AbstractClient.java:1177)
+	at org.elasticsearch.client.support.AbstractClient$IndicesAdmin.getFieldMappings(AbstractClient.java:1377)
+	at org.elasticsearch.rest.action.admin.indices.mapping.get.RestGetFieldMappingAction.handleRequest(RestGetFieldMappingAction.java:66)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:348)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)

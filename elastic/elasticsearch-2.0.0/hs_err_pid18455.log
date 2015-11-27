@@ -1,0 +1,733 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 65536 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2827), pid=18455, tid=140214030149376
+#
+# JRE version: OpenJDK Runtime Environment (7.0_85-b01) (build 1.7.0_85-b01)
+# Java VM: OpenJDK 64-Bit Server VM (24.85-b03 mixed mode linux-amd64 compressed oops)
+# Derivative: IcedTea 2.6.1
+# Distribution: Ubuntu 14.04 LTS, package 7u85-2.6.1-5ubuntu0.14.04.1
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f86280d6800):  JavaThread "C2 CompilerThread0" daemon [_thread_in_vm, id=18474, stack(0x00007f861f65a000,0x00007f861f75b000)]
+
+Stack: [0x00007f861f65a000,0x00007f861f75b000],  sp=0x00007f861f756760,  free space=1009k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x953d45]  VMError::report_and_die()+0x175
+V  [libjvm.so+0x48fd24]  report_vm_out_of_memory(char const*, int, unsigned long, char const*)+0x74
+V  [libjvm.so+0x7cf91b]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0xeb
+V  [libjvm.so+0x7ca3df]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x1f
+V  [libjvm.so+0x950c34]  VirtualSpace::expand_by(unsigned long, bool)+0x1c4
+V  [libjvm.so+0x580fdc]  CodeHeap::expand_by(unsigned long)+0x6c
+V  [libjvm.so+0x422d96]  CodeCache::allocate(int)+0x36
+V  [libjvm.so+0x41dc2d]  BufferBlob::create(char const*, int)+0x8d
+V  [libjvm.so+0x4219b1]  CodeBuffer::initialize(int, int)+0x21
+V  [libjvm.so+0x7dea45]  Compile::init_buffer(unsigned int*)+0x205
+V  [libjvm.so+0x7e61d1]  Compile::Output()+0x361
+V  [libjvm.so+0x43f415]  Compile::Code_Gen()+0x4d5
+V  [libjvm.so+0x4434c7]  Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool)+0x1017
+V  [libjvm.so+0x3b157a]  C2Compiler::compile_method(ciEnv*, ciMethod*, int)+0xca
+V  [libjvm.so+0x449347]  CompileBroker::invoke_compiler_on_method(CompileTask*)+0x327
+V  [libjvm.so+0x44a450]  CompileBroker::compiler_thread_loop()+0x3a0
+V  [libjvm.so+0x906cb0]  JavaThread::thread_main_inner()+0xf0
+V  [libjvm.so+0x906f21]  JavaThread::run()+0x221
+V  [libjvm.so+0x7cc7e2]  java_start(Thread*)+0xf2
+
+
+Current CompileTask:
+C2: 199574 1421             org.apache.lucene.store.FilterDirectory::fileLength (9 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f861813b000 JavaThread "elasticsearch[Chameleon][get][T#1]" daemon [_thread_blocked, id=18530, stack(0x00007f85ff8f9000,0x00007f85ff9fa000)]
+  0x00007f86140e9800 JavaThread "elasticsearch[Chameleon][management][T#3]" daemon [_thread_blocked, id=18529, stack(0x00007f85ff6f7000,0x00007f85ff7f8000)]
+  0x00007f86080e3000 JavaThread "elasticsearch[Chameleon][refresh][T#1]" daemon [_thread_blocked, id=18528, stack(0x00007f85fdeaf000,0x00007f85fdfb0000)]
+  0x00007f8614124800 JavaThread "elasticsearch[Chameleon][bulk][T#1]" daemon [_thread_blocked, id=18527, stack(0x00007f85fdfb0000,0x00007f85fe0b1000)]
+  0x00007f8614107000 JavaThread "elasticsearch[Chameleon][management][T#2]" daemon [_thread_blocked, id=18526, stack(0x00007f85fe0b1000,0x00007f85fe1b2000)]
+  0x00007f86140ab800 JavaThread "elasticsearch[Chameleon][search][T#2]" daemon [_thread_blocked, id=18525, stack(0x00007f85fe1b2000,0x00007f85fe2b3000)]
+  0x00007f8618112800 JavaThread "elasticsearch[Chameleon][search][T#1]" daemon [_thread_blocked, id=18524, stack(0x00007f85fe2b3000,0x00007f85fe3b4000)]
+  0x00007f861810d000 JavaThread "elasticsearch[Chameleon][listener][T#1]" daemon [_thread_blocked, id=18517, stack(0x00007f85fedee000,0x00007f85feeef000)]
+  0x00007f86080de800 JavaThread "elasticsearch[Chameleon][warmer][T#1]" daemon [_thread_blocked, id=18516, stack(0x00007f85feeef000,0x00007f85feff0000)]
+  0x00007f860801b800 JavaThread "elasticsearch[Chameleon][fetch_shard_started][T#2]" daemon [_thread_blocked, id=18515, stack(0x00007f85feff0000,0x00007f85ff0f1000)]
+  0x00007f8608019800 JavaThread "elasticsearch[Chameleon][fetch_shard_started][T#1]" daemon [_thread_blocked, id=18514, stack(0x00007f85ff0f1000,0x00007f85ff1f2000)]
+  0x00007f862800b800 JavaThread "DestroyJavaVM" [_thread_blocked, id=18467, stack(0x00007f862e3db000,0x00007f862e4dc000)]
+  0x00007f8628479800 JavaThread "elasticsearch[keepAlive/2.0.0]" [_thread_blocked, id=18513, stack(0x00007f85ff1f2000,0x00007f85ff2f3000)]
+  0x00007f86280f6800 JavaThread "elasticsearch[Chameleon][http_server_boss][T#1]{New I/O server boss #9}" daemon [_thread_in_native, id=18512, stack(0x00007f85ff2f3000,0x00007f85ff3f4000)]
+  0x00007f8628480000 JavaThread "elasticsearch[Chameleon][http_server_worker][T#2]{New I/O worker #8}" daemon [_thread_in_native, id=18511, stack(0x00007f85ff3f4000,0x00007f85ff4f5000)]
+  0x00007f862847f000 JavaThread "elasticsearch[Chameleon][http_server_worker][T#1]{New I/O worker #7}" daemon [_thread_in_native, id=18510, stack(0x00007f85ff4f5000,0x00007f85ff5f6000)]
+  0x00007f8608013800 JavaThread "elasticsearch[Chameleon][management][T#1]" daemon [_thread_blocked, id=18509, stack(0x00007f85ff5f6000,0x00007f85ff6f7000)]
+  0x00000000023ad800 JavaThread "elasticsearch[Chameleon][transport_client_timer][T#1]{Hashed wheel timer #1}" daemon [_thread_blocked, id=18501, stack(0x00007f85ffcfd000,0x00007f85ffdfe000)]
+  0x00007f8608004000 JavaThread "elasticsearch[Chameleon][generic][T#1]" daemon [_thread_blocked, id=18490, stack(0x00007f861c843000,0x00007f861c944000)]
+  0x00007f8628cc0000 JavaThread "elasticsearch[Chameleon][clusterService#updateTask][T#1]" daemon [_thread_blocked, id=18489, stack(0x00007f861c944000,0x00007f861ca45000)]
+  0x00007f8628c6a800 JavaThread "elasticsearch[Chameleon][[http_server_boss.default]][T#1]{New I/O server boss #6}" daemon [_thread_in_native, id=18488, stack(0x00007f861ca45000,0x00007f861cb46000)]
+  0x00007f8628b2b000 JavaThread "elasticsearch[Chameleon][[http_server_worker.default]][T#2]{New I/O worker #5}" daemon [_thread_in_native, id=18487, stack(0x00007f861cb46000,0x00007f861cc47000)]
+  0x00007f8628b2a800 JavaThread "elasticsearch[Chameleon][[http_server_worker.default]][T#1]{New I/O worker #4}" daemon [_thread_in_native, id=18486, stack(0x00007f861cc47000,0x00007f861cd48000)]
+  0x00007f8628b16800 JavaThread "elasticsearch[Chameleon][transport_client_boss][T#1]{New I/O boss #3}" daemon [_thread_in_native, id=18485, stack(0x00007f861cd48000,0x00007f861ce49000)]
+  0x00007f8628b1b000 JavaThread "elasticsearch[Chameleon][transport_client_worker][T#2]{New I/O worker #2}" daemon [_thread_in_native, id=18484, stack(0x00007f861ce49000,0x00007f861cf4a000)]
+  0x00007f8628b1e800 JavaThread "elasticsearch[Chameleon][transport_client_worker][T#1]{New I/O worker #1}" daemon [_thread_in_native, id=18483, stack(0x00007f861cf4a000,0x00007f861d04b000)]
+  0x00007f8628b15800 JavaThread "elasticsearch[Chameleon][[ttl_expire]]" daemon [_thread_blocked, id=18482, stack(0x00007f861d04b000,0x00007f861d14c000)]
+  0x00007f8628b13800 JavaThread "elasticsearch[Chameleon][marvel.exporters]" daemon [_thread_blocked, id=18481, stack(0x00007f861d14c000,0x00007f861d24d000)]
+  0x00007f8628ab3800 JavaThread "elasticsearch[Chameleon][scheduler][T#1]" daemon [_thread_in_native, id=18480, stack(0x00007f861d24d000,0x00007f861d34e000)]
+  0x00007f8628623000 JavaThread "elasticsearch[Chameleon][[timer]]" daemon [_thread_blocked, id=18478, stack(0x00007f861d34e000,0x00007f861d44f000)]
+  0x00007f86280db800 JavaThread "Service Thread" daemon [_thread_blocked, id=18476, stack(0x00007f861f458000,0x00007f861f559000)]
+  0x00007f86280d9000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=18475, stack(0x00007f861f559000,0x00007f861f65a000)]
+=>0x00007f86280d6800 JavaThread "C2 CompilerThread0" daemon [_thread_in_vm, id=18474, stack(0x00007f861f65a000,0x00007f861f75b000)]
+  0x00007f86280d4800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=18473, stack(0x00007f861f75b000,0x00007f861f85c000)]
+  0x00007f86280d2800 JavaThread "Surrogate Locker Thread (Concurrent GC)" daemon [_thread_blocked, id=18472, stack(0x00007f861f85c000,0x00007f861f95d000)]
+  0x00007f86280a5800 JavaThread "Finalizer" daemon [_thread_blocked, id=18471, stack(0x00007f861fae6000,0x00007f861fbe7000)]
+  0x00007f86280a3800 JavaThread "Reference Handler" daemon [_thread_blocked, id=18470, stack(0x00007f861fbe7000,0x00007f861fce8000)]
+
+Other Threads:
+  0x00007f862809f800 VMThread [stack: 0x00007f861fce8000,0x00007f861fde9000] [id=18469]
+  0x00007f86280e6800 WatcherThread [stack: 0x00007f861f357000,0x00007f861f458000] [id=18477]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f86280070e0] CodeCache_lock - owner thread: 0x00007f86280d6800
+
+Heap
+ def new generation   total 76672K, used 32682K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K,  43% used [0x00000000b5a00000, 0x00000000b7728948, 0x00000000b9c90000)
+  from space 8512K,  33% used [0x00000000b9c90000, 0x00000000b9f52280, 0x00000000ba4e0000)
+  to   space 8512K,   0% used [0x00000000ba4e0000, 0x00000000ba4e0000, 0x00000000bad30000)
+ concurrent mark-sweep generation total 176960K, used 30318K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41408K, used 41346K [0x00000000f5a00000, 0x00000000f8270000, 0x0000000100000000)
+
+Card table byte_map: [0x00007f8623d1f000,0x00007f8623f73000] byte_map_base: 0x00007f8623772000
+
+Polling page: 0x00007f862e4eb000
+
+Code Cache  [0x00007f8623f73000, 0x00007f86242b3000, 0x00007f8626f73000)
+ total_blobs=1745 nmethods=1235 adapters=459 free_code_cache=45926Kb largest_free_block=46931648
+
+Compilation events (10 events):
+Event: 199.304 Thread 0x00007f86280d9000 1422             java.io.UnixFileSystem::prefixLength (25 bytes)
+Event: 199.316 Thread 0x00007f86280d9000 nmethod 1422 0x00007f86242aeed0 code [0x00007f86242af020, 0x00007f86242af0f8]
+Event: 199.317 Thread 0x00007f86280d9000 1423             java.util.concurrent.atomic.AtomicLong::compareAndSet (13 bytes)
+Event: 199.317 Thread 0x00007f86280d9000 nmethod 1423 0x00007f8624290450 code [0x00007f8624290580, 0x00007f86242905d8]
+Event: 199.317 Thread 0x00007f86280d9000 1424             com.fasterxml.jackson.dataformat.smile.SmileGenerator::_addSeenName (196 bytes)
+Event: 199.334 Thread 0x00007f86280d9000 nmethod 1424 0x00007f86241df850 code [0x00007f86241df9e0, 0x00007f86241e00c8]
+Event: 199.358 Thread 0x00007f86280d9000 1425             com.fasterxml.jackson.dataformat.smile.SmileParser::_skipIncomplete (371 bytes)
+Event: 199.365 Thread 0x00007f86280d9000 nmethod 1425 0x00007f86240b2110 code [0x00007f86240b22e0, 0x00007f86240b26e0]
+Event: 199.380 Thread 0x00007f86280d9000 1426             java.util.concurrent.atomic.AtomicInteger::decrementAndGet (23 bytes)
+Event: 199.381 Thread 0x00007f86280d9000 nmethod 1426 0x00007f86241df610 code [0x00007f86241df740, 0x00007f86241df7d8]
+
+GC Heap History (10 events):
+Event: 59.545 GC heap before
+{Heap before GC invocations=7 (full 0):
+ def new generation   total 76672K, used 70535K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K, 100% used [0x00000000b5a00000, 0x00000000b9c90000, 0x00000000b9c90000)
+  from space 8512K,  27% used [0x00000000ba4e0000, 0x00000000ba731d80, 0x00000000bad30000)
+  to   space 8512K,   0% used [0x00000000b9c90000, 0x00000000b9c90000, 0x00000000ba4e0000)
+ concurrent mark-sweep generation total 176960K, used 27854K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41216K, used 41094K [0x00000000f5a00000, 0x00000000f8240000, 0x0000000100000000)
+Event: 59.564 GC heap after
+Heap after GC invocations=8 (full 0):
+ def new generation   total 76672K, used 3848K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K,   0% used [0x00000000b5a00000, 0x00000000b5a00000, 0x00000000b9c90000)
+  from space 8512K,  45% used [0x00000000b9c90000, 0x00000000ba052368, 0x00000000ba4e0000)
+  to   space 8512K,   0% used [0x00000000ba4e0000, 0x00000000ba4e0000, 0x00000000bad30000)
+ concurrent mark-sweep generation total 176960K, used 27854K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41216K, used 41094K [0x00000000f5a00000, 0x00000000f8240000, 0x0000000100000000)
+}
+Event: 97.296 GC heap before
+{Heap before GC invocations=8 (full 0):
+ def new generation   total 76672K, used 72008K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K, 100% used [0x00000000b5a00000, 0x00000000b9c90000, 0x00000000b9c90000)
+  from space 8512K,  45% used [0x00000000b9c90000, 0x00000000ba052368, 0x00000000ba4e0000)
+  to   space 8512K,   0% used [0x00000000ba4e0000, 0x00000000ba4e0000, 0x00000000bad30000)
+ concurrent mark-sweep generation total 176960K, used 27854K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41216K, used 41153K [0x00000000f5a00000, 0x00000000f8240000, 0x0000000100000000)
+Event: 97.305 GC heap after
+Heap after GC invocations=9 (full 0):
+ def new generation   total 76672K, used 3396K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K,   0% used [0x00000000b5a00000, 0x00000000b5a00000, 0x00000000b9c90000)
+  from space 8512K,  39% used [0x00000000ba4e0000, 0x00000000ba8312c0, 0x00000000bad30000)
+  to   space 8512K,   0% used [0x00000000b9c90000, 0x00000000b9c90000, 0x00000000ba4e0000)
+ concurrent mark-sweep generation total 176960K, used 27854K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41216K, used 41153K [0x00000000f5a00000, 0x00000000f8240000, 0x0000000100000000)
+}
+Event: 128.507 GC heap before
+{Heap before GC invocations=9 (full 0):
+ def new generation   total 76672K, used 71556K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K, 100% used [0x00000000b5a00000, 0x00000000b9c90000, 0x00000000b9c90000)
+  from space 8512K,  39% used [0x00000000ba4e0000, 0x00000000ba8312c0, 0x00000000bad30000)
+  to   space 8512K,   0% used [0x00000000b9c90000, 0x00000000b9c90000, 0x00000000ba4e0000)
+ concurrent mark-sweep generation total 176960K, used 27854K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41408K, used 41186K [0x00000000f5a00000, 0x00000000f8270000, 0x0000000100000000)
+Event: 128.516 GC heap after
+Heap after GC invocations=10 (full 0):
+ def new generation   total 76672K, used 6898K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K,   0% used [0x00000000b5a00000, 0x00000000b5a00000, 0x00000000b9c90000)
+  from space 8512K,  81% used [0x00000000b9c90000, 0x00000000ba34cb98, 0x00000000ba4e0000)
+  to   space 8512K,   0% used [0x00000000ba4e0000, 0x00000000ba4e0000, 0x00000000bad30000)
+ concurrent mark-sweep generation total 176960K, used 27854K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41408K, used 41186K [0x00000000f5a00000, 0x00000000f8270000, 0x0000000100000000)
+}
+Event: 148.631 GC heap before
+{Heap before GC invocations=10 (full 0):
+ def new generation   total 76672K, used 75058K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K, 100% used [0x00000000b5a00000, 0x00000000b9c90000, 0x00000000b9c90000)
+  from space 8512K,  81% used [0x00000000b9c90000, 0x00000000ba34cb98, 0x00000000ba4e0000)
+  to   space 8512K,   0% used [0x00000000ba4e0000, 0x00000000ba4e0000, 0x00000000bad30000)
+ concurrent mark-sweep generation total 176960K, used 27854K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41408K, used 41251K [0x00000000f5a00000, 0x00000000f8270000, 0x0000000100000000)
+Event: 148.645 GC heap after
+Heap after GC invocations=11 (full 0):
+ def new generation   total 76672K, used 2837K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K,   0% used [0x00000000b5a00000, 0x00000000b5a00000, 0x00000000b9c90000)
+  from space 8512K,  33% used [0x00000000ba4e0000, 0x00000000ba7a5508, 0x00000000bad30000)
+  to   space 8512K,   0% used [0x00000000b9c90000, 0x00000000b9c90000, 0x00000000ba4e0000)
+ concurrent mark-sweep generation total 176960K, used 30318K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41408K, used 41251K [0x00000000f5a00000, 0x00000000f8270000, 0x0000000100000000)
+}
+Event: 180.737 GC heap before
+{Heap before GC invocations=11 (full 0):
+ def new generation   total 76672K, used 70997K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K, 100% used [0x00000000b5a00000, 0x00000000b9c90000, 0x00000000b9c90000)
+  from space 8512K,  33% used [0x00000000ba4e0000, 0x00000000ba7a5508, 0x00000000bad30000)
+  to   space 8512K,   0% used [0x00000000b9c90000, 0x00000000b9c90000, 0x00000000ba4e0000)
+ concurrent mark-sweep generation total 176960K, used 30318K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41408K, used 41330K [0x00000000f5a00000, 0x00000000f8270000, 0x0000000100000000)
+Event: 180.750 GC heap after
+Heap after GC invocations=12 (full 0):
+ def new generation   total 76672K, used 2824K [0x00000000b5a00000, 0x00000000bad30000, 0x00000000bad30000)
+  eden space 68160K,   0% used [0x00000000b5a00000, 0x00000000b5a00000, 0x00000000b9c90000)
+  from space 8512K,  33% used [0x00000000b9c90000, 0x00000000b9f52280, 0x00000000ba4e0000)
+  to   space 8512K,   0% used [0x00000000ba4e0000, 0x00000000ba4e0000, 0x00000000bad30000)
+ concurrent mark-sweep generation total 176960K, used 30318K [0x00000000bad30000, 0x00000000c5a00000, 0x00000000f5a00000)
+ concurrent-mark-sweep perm gen total 41408K, used 41330K [0x00000000f5a00000, 0x00000000f8270000, 0x0000000100000000)
+}
+
+Deoptimization events (10 events):
+Event: 138.900 Thread 0x000000000252d800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f86240ee3dc method=org.apache.lucene.codecs.lucene50.Lucene50DocValuesProducer$10.get(I)Z @ 8
+Event: 138.900 Thread 0x000000000252d800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f8624243e1c method=org.apache.lucene.codecs.lucene50.Lucene50DocValuesProducer$10.get(I)Z @ 8
+Event: 138.900 Thread 0x000000000252d800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f8624254258 method=org.apache.lucene.codecs.lucene50.Lucene50DocValuesProducer$10.get(I)Z @ 8
+Event: 138.912 Thread 0x000000000252d800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f8624259cd0 method=org.apache.lucene.codecs.lucene50.Lucene50DocValuesProducer$10.get(I)Z @ 8
+Event: 138.982 Thread 0x000000000252d800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f8624258d68 method=org.apache.lucene.util.packed.DirectReader$DirectPackedReader8.get(J)J @ 5
+Event: 138.982 Thread 0x000000000252d800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f8624258d68 method=org.apache.lucene.util.packed.DirectReader$DirectPackedReader8.get(J)J @ 5
+Event: 138.982 Thread 0x000000000252d800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f8624258d68 method=org.apache.lucene.util.packed.DirectReader$DirectPackedReader8.get(J)J @ 5
+Event: 138.982 Thread 0x000000000252d800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f8624258d68 method=org.apache.lucene.util.packed.DirectReader$DirectPackedReader8.get(J)J @ 5
+Event: 139.072 Thread 0x000000000252d800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f8624139df8 method=org.apache.lucene.util.Sorter.insertionSort(II)V @ 38
+Event: 148.422 Thread 0x00007f8614124800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f86240c85a8 method=org.apache.lucene.codecs.blocktree.SegmentTermsEnumFrame.scanToTermLeaf(Lorg/apache/lucene/util/BytesRef;Z)Lorg/apache/lucene/index/TermsEnum$SeekStatus; @ 43
+
+Internal exceptions (10 events):
+Event: 189.397 Thread 0x00007f86080e3000 Threw 0x00000000b6db5ca0 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+Event: 189.397 Thread 0x00007f86080e3000 Threw 0x00000000b6db9850 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+Event: 189.398 Thread 0x00007f86080e3000 Threw 0x00000000b6ddd308 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+Event: 189.399 Thread 0x00007f86080e3000 Threw 0x00000000b6de49a8 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+Event: 189.399 Thread 0x00007f86080e3000 Threw 0x00000000b6de81f8 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+Event: 189.400 Thread 0x00007f86080e3000 Threw 0x00000000b6df8980 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+Event: 199.363 Thread 0x00007f8614124800 Threw 0x00000000b73992f8 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+Event: 199.363 Thread 0x00007f8614124800 Threw 0x00000000b739cbb0 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+Event: 199.370 Thread 0x00007f8614124800 Threw 0x00000000b73d4628 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+Event: 199.370 Thread 0x00007f8614124800 Threw 0x00000000b73d7f88 at /build/openjdk-7-65SuYz/openjdk-7-7u85-2.6.1/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:721
+
+Events (10 events):
+Event: 189.394 Executing VM operation: RevokeBias done
+Event: 189.403 Executing VM operation: RevokeBias
+Event: 189.403 Executing VM operation: RevokeBias done
+Event: 199.360 Executing VM operation: RevokeBias
+Event: 199.362 Executing VM operation: RevokeBias done
+Event: 199.365 Thread 0x00007f86280d9000 flushing nmethod 0x00007f86240e90d0
+Event: 199.365 Thread 0x00007f86280d9000 flushing nmethod 0x00007f86240e9750
+Event: 199.369 Executing VM operation: RevokeBias
+Event: 199.369 Executing VM operation: RevokeBias done
+Event: 199.381 Thread 0x00007f86280d9000 flushing nmethod 0x00007f86240eddd0
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 ca:01 43654                              /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+00600000-00601000 r--p 00000000 ca:01 43654                              /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+00601000-00602000 rw-p 00001000 ca:01 43654                              /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+020f0000-02aa1000 rw-p 00000000 00:00 0                                  [heap]
+b5a00000-c5a00000 rw-p 00000000 00:00 0 
+c5a00000-f5a00000 rw-p 00000000 00:00 0 
+f5a00000-f8270000 rw-p 00000000 00:00 0 
+f8270000-100000000 rw-p 00000000 00:00 0 
+7f85fde65000-7f85fde79000 r--s 00000000 ca:01 290260                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/.marvel-es-2015.11.27/0/index/_33_Lucene50_0.dvd
+7f85fde79000-7f85fde8c000 r--s 00000000 ca:01 290711                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/.marvel-es-2015.11.27/0/index/_33_Lucene50_0.tim
+7f85fdeaf000-7f85fdeb2000 ---p 00000000 00:00 0 
+7f85fdeb2000-7f85fdfb0000 rw-p 00000000 00:00 0                          [stack:18528]
+7f85fdfb0000-7f85fdfb3000 ---p 00000000 00:00 0 
+7f85fdfb3000-7f85fe0b1000 rw-p 00000000 00:00 0                          [stack:18527]
+7f85fe0b1000-7f85fe0b4000 ---p 00000000 00:00 0 
+7f85fe0b4000-7f85fe1b2000 rw-p 00000000 00:00 0                          [stack:18526]
+7f85fe1b2000-7f85fe1b5000 ---p 00000000 00:00 0 
+7f85fe1b5000-7f85fe2b3000 rw-p 00000000 00:00 0                          [stack:18525]
+7f85fe2b3000-7f85fe2b6000 ---p 00000000 00:00 0 
+7f85fe2b6000-7f85fe3b4000 rw-p 00000000 00:00 0                          [stack:18524]
+7f85fe3b4000-7f85fe3bc000 r--s 00000000 ca:01 290201                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/0/index/_dc_Lucene50_0.tim
+7f85fe3bc000-7f85fea81000 r--s 00000000 ca:01 289097                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/.marvel-es-2015.11.20/0/index/_5jq_Lucene50_0.dvd
+7f85fea81000-7f85fedee000 r--s 00000000 ca:01 289093                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/.marvel-es-2015.11.20/0/index/_5jq_Lucene50_0.tim
+7f85fedee000-7f85fedf1000 ---p 00000000 00:00 0 
+7f85fedf1000-7f85feeef000 rw-p 00000000 00:00 0                          [stack:18517]
+7f85feeef000-7f85feef2000 ---p 00000000 00:00 0 
+7f85feef2000-7f85feff0000 rw-p 00000000 00:00 0                          [stack:18516]
+7f85feff0000-7f85feff3000 ---p 00000000 00:00 0 
+7f85feff3000-7f85ff0f1000 rw-p 00000000 00:00 0                          [stack:18515]
+7f85ff0f1000-7f85ff0f4000 ---p 00000000 00:00 0 
+7f85ff0f4000-7f85ff1f2000 rw-p 00000000 00:00 0                          [stack:18514]
+7f85ff1f2000-7f85ff1f5000 ---p 00000000 00:00 0 
+7f85ff1f5000-7f85ff2f3000 rw-p 00000000 00:00 0                          [stack:18513]
+7f85ff2f3000-7f85ff2f6000 ---p 00000000 00:00 0 
+7f85ff2f6000-7f85ff3f4000 rw-p 00000000 00:00 0                          [stack:18512]
+7f85ff3f4000-7f85ff3f7000 ---p 00000000 00:00 0 
+7f85ff3f7000-7f85ff4f5000 rw-p 00000000 00:00 0                          [stack:18511]
+7f85ff4f5000-7f85ff4f8000 ---p 00000000 00:00 0 
+7f85ff4f8000-7f85ff5f6000 rw-p 00000000 00:00 0                          [stack:18510]
+7f85ff5f6000-7f85ff5f9000 ---p 00000000 00:00 0 
+7f85ff5f9000-7f85ff6f7000 rw-p 00000000 00:00 0                          [stack:18509]
+7f85ff6f7000-7f85ff6fa000 ---p 00000000 00:00 0 
+7f85ff6fa000-7f85ff7f8000 rw-p 00000000 00:00 0                          [stack:18529]
+7f85ff7f8000-7f85ff7fb000 ---p 00000000 00:00 0 
+7f85ff7fb000-7f85ff8f9000 rw-p 00000000 00:00 0 
+7f85ff8f9000-7f85ff8fc000 ---p 00000000 00:00 0 
+7f85ff8fc000-7f85ff9fa000 rw-p 00000000 00:00 0                          [stack:18530]
+7f85ff9fa000-7f85ff9fd000 ---p 00000000 00:00 0 
+7f85ff9fd000-7f85ffafb000 rw-p 00000000 00:00 0 
+7f85ffafb000-7f85ffafe000 ---p 00000000 00:00 0 
+7f85ffafe000-7f85ffbfc000 rw-p 00000000 00:00 0 
+7f85ffbfc000-7f85ffbff000 ---p 00000000 00:00 0 
+7f85ffbff000-7f85ffcfd000 rw-p 00000000 00:00 0 
+7f85ffcfd000-7f85ffd00000 ---p 00000000 00:00 0 
+7f85ffd00000-7f85ffdfe000 rw-p 00000000 00:00 0                          [stack:18501]
+7f85ffdfe000-7f85ffe01000 ---p 00000000 00:00 0 
+7f85ffe01000-7f85ffeff000 rw-p 00000000 00:00 0 
+7f85ffeff000-7f85fff02000 ---p 00000000 00:00 0 
+7f85fff02000-7f8600000000 rw-p 00000000 00:00 0 
+7f8600000000-7f86000d8000 rw-p 00000000 00:00 0 
+7f86000d8000-7f8604000000 ---p 00000000 00:00 0 
+7f8604000000-7f8605192000 rw-p 00000000 00:00 0 
+7f8605192000-7f8608000000 ---p 00000000 00:00 0 
+7f8608000000-7f8608199000 rw-p 00000000 00:00 0 
+7f8608199000-7f860c000000 ---p 00000000 00:00 0 
+7f860c000000-7f860c0d9000 rw-p 00000000 00:00 0 
+7f860c0d9000-7f8610000000 ---p 00000000 00:00 0 
+7f8610000000-7f86100f8000 rw-p 00000000 00:00 0 
+7f86100f8000-7f8614000000 ---p 00000000 00:00 0 
+7f8614000000-7f8614364000 rw-p 00000000 00:00 0 
+7f8614364000-7f8618000000 ---p 00000000 00:00 0 
+7f8618000000-7f8618155000 rw-p 00000000 00:00 0 
+7f8618155000-7f861c000000 ---p 00000000 00:00 0 
+7f861c003000-7f861c004000 r--s 00000000 ca:01 290204                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/0/index/_dc_Lucene50_0.dvd
+7f861c004000-7f861c005000 r--s 00000000 ca:01 290110                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/2/index/_d2_Lucene50_0.dvd
+7f861c005000-7f861c00d000 r--s 00000000 ca:01 289105                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/2/index/_d2_Lucene50_0.tim
+7f861c00d000-7f861c00e000 r--s 00000000 ca:01 289108                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/3/index/_dc_Lucene50_0.dvd
+7f861c00e000-7f861c016000 r--s 00000000 ca:01 289106                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/3/index/_dc_Lucene50_0.tim
+7f861c016000-7f861c01e000 r--s 00000000 ca:01 289596                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/1/index/_dd_Lucene50_0.tim
+7f861c01e000-7f861c026000 r--s 00000000 ca:01 289177                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/4/index/_d2_Lucene50_0.tim
+7f861c026000-7f861c02f000 r--s 00000000 ca:01 289176                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/.marvel-es-2015.11.21/0/index/_1o_Lucene50_0.dvd
+7f861c02f000-7f861c03b000 r--s 00000000 ca:01 289174                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/.marvel-es-2015.11.21/0/index/_1o_Lucene50_0.tim
+7f861c03b000-7f861c03e000 ---p 00000000 00:00 0 
+7f861c03e000-7f861c13c000 rw-p 00000000 00:00 0 
+7f861c13c000-7f861c13f000 ---p 00000000 00:00 0 
+7f861c13f000-7f861c23d000 rw-p 00000000 00:00 0 
+7f861c23d000-7f861c240000 ---p 00000000 00:00 0 
+7f861c240000-7f861c33e000 rw-p 00000000 00:00 0 
+7f861c33e000-7f861c341000 ---p 00000000 00:00 0 
+7f861c341000-7f861c43f000 rw-p 00000000 00:00 0 
+7f861c43f000-7f861c442000 ---p 00000000 00:00 0 
+7f861c442000-7f861c540000 rw-p 00000000 00:00 0 
+7f861c540000-7f861c543000 ---p 00000000 00:00 0 
+7f861c543000-7f861c641000 rw-p 00000000 00:00 0 
+7f861c641000-7f861c644000 ---p 00000000 00:00 0 
+7f861c644000-7f861c742000 rw-p 00000000 00:00 0 
+7f861c742000-7f861c745000 ---p 00000000 00:00 0 
+7f861c745000-7f861c843000 rw-p 00000000 00:00 0 
+7f861c843000-7f861c846000 ---p 00000000 00:00 0 
+7f861c846000-7f861c944000 rw-p 00000000 00:00 0                          [stack:18490]
+7f861c944000-7f861c947000 ---p 00000000 00:00 0 
+7f861c947000-7f861ca45000 rw-p 00000000 00:00 0                          [stack:18489]
+7f861ca45000-7f861ca48000 ---p 00000000 00:00 0 
+7f861ca48000-7f861cb46000 rw-p 00000000 00:00 0                          [stack:18488]
+7f861cb46000-7f861cb49000 ---p 00000000 00:00 0 
+7f861cb49000-7f861cc47000 rw-p 00000000 00:00 0                          [stack:18487]
+7f861cc47000-7f861cc4a000 ---p 00000000 00:00 0 
+7f861cc4a000-7f861cd48000 rw-p 00000000 00:00 0                          [stack:18486]
+7f861cd48000-7f861cd4b000 ---p 00000000 00:00 0 
+7f861cd4b000-7f861ce49000 rw-p 00000000 00:00 0                          [stack:18485]
+7f861ce49000-7f861ce4c000 ---p 00000000 00:00 0 
+7f861ce4c000-7f861cf4a000 rw-p 00000000 00:00 0                          [stack:18484]
+7f861cf4a000-7f861cf4d000 ---p 00000000 00:00 0 
+7f861cf4d000-7f861d04b000 rw-p 00000000 00:00 0                          [stack:18483]
+7f861d04b000-7f861d04e000 ---p 00000000 00:00 0 
+7f861d04e000-7f861d14c000 rw-p 00000000 00:00 0                          [stack:18482]
+7f861d14c000-7f861d14f000 ---p 00000000 00:00 0 
+7f861d14f000-7f861d24d000 rw-p 00000000 00:00 0                          [stack:18481]
+7f861d24d000-7f861d250000 ---p 00000000 00:00 0 
+7f861d250000-7f861d34e000 rw-p 00000000 00:00 0                          [stack:18480]
+7f861d34e000-7f861d351000 ---p 00000000 00:00 0 
+7f861d351000-7f861d44f000 rw-p 00000000 00:00 0                          [stack:18478]
+7f861d44f000-7f861d466000 r-xp 00000000 ca:01 50649                      /tmp/jna--851256601/jna8490593959204864956.tmp (deleted)
+7f861d466000-7f861d565000 ---p 00017000 ca:01 50649                      /tmp/jna--851256601/jna8490593959204864956.tmp (deleted)
+7f861d565000-7f861d567000 rw-p 00016000 ca:01 50649                      /tmp/jna--851256601/jna8490593959204864956.tmp (deleted)
+7f861d567000-7f861d56c000 r-xp 00000000 ca:01 396073                     /lib/x86_64-linux-gnu/libnss_dns-2.19.so
+7f861d56c000-7f861d76b000 ---p 00005000 ca:01 396073                     /lib/x86_64-linux-gnu/libnss_dns-2.19.so
+7f861d76b000-7f861d76c000 r--p 00004000 ca:01 396073                     /lib/x86_64-linux-gnu/libnss_dns-2.19.so
+7f861d76c000-7f861d76d000 rw-p 00005000 ca:01 396073                     /lib/x86_64-linux-gnu/libnss_dns-2.19.so
+7f861d76d000-7f861d76e000 r--s 00000000 ca:01 290112                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/1/index/_dd_Lucene50_0.dvd
+7f861d76e000-7f861d76f000 r--s 00000000 ca:01 289189                     /var/www/elastic/elasticsearch-2.0.0/data/elasticsearch/nodes/0/indices/logstash-2015.11.20/4/index/_d2_Lucene50_0.dvd
+7f861d76f000-7f861d771000 r--s 00018000 ca:01 43666                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jce.jar
+7f861d771000-7f861d774000 r--s 0000f000 ca:01 289218                     /var/www/elastic/elasticsearch-2.0.0/plugins/license/license-2.0.0.jar
+7f861d774000-7f861d776000 r--s 00004000 ca:01 289216                     /var/www/elastic/elasticsearch-2.0.0/plugins/license/license-core-2.0.0.jar
+7f861d776000-7f861d778000 r--s 00001000 ca:01 289214                     /var/www/elastic/elasticsearch-2.0.0/plugins/license/license-plugin-api-2.0.0.jar
+7f861d778000-7f861d780000 r-xp 00000000 ca:01 43692                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f861d780000-7f861d97f000 ---p 00008000 ca:01 43692                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f861d97f000-7f861d980000 r--p 00007000 ca:01 43692                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f861d980000-7f861d981000 rw-p 00008000 ca:01 43692                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libmanagement.so
+7f861d981000-7f861d991000 r-xp 00000000 ca:01 43684                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnio.so
+7f861d991000-7f861db91000 ---p 00010000 ca:01 43684                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnio.so
+7f861db91000-7f861db92000 r--p 00010000 ca:01 43684                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnio.so
+7f861db92000-7f861db93000 rw-p 00011000 ca:01 43684                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnio.so
+7f861db93000-7f861dbc4000 rw-p 00000000 00:00 0 
+7f861dbc4000-7f861dc01000 r-xp 00000000 ca:01 399120                     /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7f861dc01000-7f861de00000 ---p 0003d000 ca:01 399120                     /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7f861de00000-7f861de01000 r--p 0003c000 ca:01 399120                     /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7f861de01000-7f861de02000 rw-p 0003d000 ca:01 399120                     /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+7f861de02000-7f861de09000 r-xp 00000000 ca:01 8067                       /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1
+7f861de09000-7f861e008000 ---p 00007000 ca:01 8067                       /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1
+7f861e008000-7f861e009000 r--p 00006000 ca:01 8067                       /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1
+7f861e009000-7f861e00a000 rw-p 00007000 ca:01 8067                       /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1
+7f861e00a000-7f861e021000 r-xp 00000000 ca:01 396095                     /lib/x86_64-linux-gnu/libresolv-2.19.so
+7f861e021000-7f861e221000 ---p 00017000 ca:01 396095                     /lib/x86_64-linux-gnu/libresolv-2.19.so
+7f861e221000-7f861e222000 r--p 00017000 ca:01 396095                     /lib/x86_64-linux-gnu/libresolv-2.19.so
+7f861e222000-7f861e223000 rw-p 00018000 ca:01 396095                     /lib/x86_64-linux-gnu/libresolv-2.19.so
+7f861e223000-7f861e225000 rw-p 00000000 00:00 0 
+7f861e225000-7f861e245000 r-xp 00000000 ca:01 396097                     /lib/x86_64-linux-gnu/libselinux.so.1
+7f861e245000-7f861e444000 ---p 00020000 ca:01 396097                     /lib/x86_64-linux-gnu/libselinux.so.1
+7f861e444000-7f861e445000 r--p 0001f000 ca:01 396097                     /lib/x86_64-linux-gnu/libselinux.so.1
+7f861e445000-7f861e446000 rw-p 00020000 ca:01 396097                     /lib/x86_64-linux-gnu/libselinux.so.1
+7f861e446000-7f861e448000 rw-p 00000000 00:00 0 
+7f861e448000-7f861e44b000 r-xp 00000000 ca:01 8079                       /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4002.0
+7f861e44b000-7f861e64a000 ---p 00003000 ca:01 8079                       /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4002.0
+7f861e64a000-7f861e64b000 r--p 00002000 ca:01 8079                       /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4002.0
+7f861e64b000-7f861e64c000 rw-p 00003000 ca:01 8079                       /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.4002.0
+7f861e64c000-7f861e752000 r-xp 00000000 ca:01 396056                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.4002.0
+7f861e752000-7f861e951000 ---p 00106000 ca:01 396056                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.4002.0
+7f861e951000-7f861e952000 r--p 00105000 ca:01 396056                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.4002.0
+7f861e952000-7f861e953000 rw-p 00106000 ca:01 396056                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.4002.0
+7f861e953000-7f861e954000 rw-p 00000000 00:00 0 
+7f861e954000-7f861e9a3000 r-xp 00000000 ca:01 8083                       /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4002.0
+7f861e9a3000-7f861eba3000 ---p 0004f000 ca:01 8083                       /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4002.0
+7f861eba3000-7f861eba4000 r--p 0004f000 ca:01 8083                       /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4002.0
+7f861eba4000-7f861eba5000 rw-p 00050000 ca:01 8083                       /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4002.0
+7f861eba5000-7f861ed11000 r-xp 00000000 ca:01 8078                       /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4002.0
+7f861ed11000-7f861ef10000 ---p 0016c000 ca:01 8078                       /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4002.0
+7f861ef10000-7f861ef14000 r--p 0016b000 ca:01 8078                       /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4002.0
+7f861ef14000-7f861ef16000 rw-p 0016f000 ca:01 8078                       /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.4002.0
+7f861ef16000-7f861ef18000 rw-p 00000000 00:00 0 
+7f861ef18000-7f861ef1c000 r--s 00021000 ca:01 289233                     /var/www/elastic/elasticsearch-2.0.0/plugins/marvel-agent/marvel-agent-2.0.0.jar
+7f861ef1c000-7f861ef1d000 r--p 00000000 00:00 0 
+7f861ef1d000-7f861ef1e000 rwxp 00000000 00:00 0 
+7f861ef1e000-7f861ef23000 r--s 0004e000 ca:01 43730                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jsse.jar
+7f861ef23000-7f861ef3a000 r-xp 00000000 ca:01 43717                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnet.so
+7f861ef3a000-7f861f139000 ---p 00017000 ca:01 43717                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnet.so
+7f861f139000-7f861f13a000 r--p 00016000 ca:01 43717                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnet.so
+7f861f13a000-7f861f13b000 rw-p 00017000 ca:01 43717                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libnet.so
+7f861f13b000-7f861f13d000 r--s 00017000 ca:01 282270                     /var/www/elastic/elasticsearch-2.0.0/lib/spatial4j-0.4.1.jar
+7f861f13d000-7f861f13f000 r--s 00012000 ca:01 282283                     /var/www/elastic/elasticsearch-2.0.0/lib/compress-lzf-1.0.2.jar
+7f861f13f000-7f861f143000 r--s 00035000 ca:01 282276                     /var/www/elastic/elasticsearch-2.0.0/lib/jackson-core-2.5.3.jar
+7f861f143000-7f861f155000 r--s 0016a000 ca:01 282258                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-analyzers-common-5.2.1.jar
+7f861f155000-7f861f157000 r--s 0000b000 ca:01 282284                     /var/www/elastic/elasticsearch-2.0.0/lib/t-digest-3.0.jar
+7f861f157000-7f861f159000 r--s 00011000 ca:01 282289                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-expressions-5.2.1.jar
+7f861f159000-7f861f160000 r--s 0003c000 ca:01 282280                     /var/www/elastic/elasticsearch-2.0.0/lib/snakeyaml-1.12.jar
+7f861f160000-7f861f170000 r--s 00088000 ca:01 282274                     /var/www/elastic/elasticsearch-2.0.0/lib/joda-time-2.8.2.jar
+7f861f170000-7f861f173000 r--s 00016000 ca:01 282263                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-join-5.2.1.jar
+7f861f173000-7f861f175000 r--s 00011000 ca:01 282278                     /var/www/elastic/elasticsearch-2.0.0/lib/jackson-dataformat-smile-2.5.3.jar
+7f861f175000-7f861f17a000 r--s 00032000 ca:01 282266                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-suggest-5.2.1.jar
+7f861f17a000-7f861f182000 r--s 00066000 ca:01 282297                     /var/www/elastic/elasticsearch-2.0.0/lib/apache-log4j-extras-1.2.17.jar
+7f861f182000-7f861f184000 r--s 0000e000 ca:01 282287                     /var/www/elastic/elasticsearch-2.0.0/lib/jsr166e-1.1.0.jar
+7f861f184000-7f861f187000 r--s 00018000 ca:01 282265                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-sandbox-5.2.1.jar
+7f861f187000-7f861f188000 r--s 0000c000 ca:01 282286                     /var/www/elastic/elasticsearch-2.0.0/lib/commons-cli-1.3.1.jar
+7f861f188000-7f861f18a000 r--s 00019000 ca:01 282285                     /var/www/elastic/elasticsearch-2.0.0/lib/HdrHistogram-2.1.6.jar
+7f861f18a000-7f861f18e000 r--s 00018000 ca:01 282294                     /var/www/elastic/elasticsearch-2.0.0/lib/compiler-0.8.13.jar
+7f861f18e000-7f861f1b5000 r--s 00216000 ca:01 282256                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-core-5.2.1.jar
+7f861f1b5000-7f861f1bb000 r--s 0002e000 ca:01 282259                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-queries-5.2.1.jar
+7f861f1bb000-7f861f1c5000 r--s 00058000 ca:01 282264                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-queryparser-5.2.1.jar
+7f861f1c5000-7f861f1f0000 r--s 001fc000 ca:01 282272                     /var/www/elastic/elasticsearch-2.0.0/lib/guava-18.0.jar
+7f861f1f0000-7f861f1f3000 r--s 00026000 ca:01 282290                     /var/www/elastic/elasticsearch-2.0.0/lib/antlr-runtime-3.5.jar
+7f861f1f3000-7f861f1f6000 r--s 00018000 ca:01 282268                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-grouping-5.2.1.jar
+7f861f1f6000-7f861f1fc000 r--s 00042000 ca:01 282269                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-spatial-5.2.1.jar
+7f861f1fc000-7f861f215000 r--s 0012c000 ca:01 282282                     /var/www/elastic/elasticsearch-2.0.0/lib/netty-3.10.5.Final.jar
+7f861f215000-7f861f226000 r--s 000b2000 ca:01 282293                     /var/www/elastic/elasticsearch-2.0.0/lib/jts-1.13.jar
+7f861f226000-7f861f23d000 r--s 00100000 ca:01 282273                     /var/www/elastic/elasticsearch-2.0.0/lib/hppc-0.7.1.jar
+7f861f23d000-7f861f2ac000 r--s 0060f000 ca:01 282295                     /var/www/elastic/elasticsearch-2.0.0/lib/groovy-all-2.4.4-indy.jar
+7f861f2ac000-7f861f357000 r--s 00807000 ca:01 282288                     /var/www/elastic/elasticsearch-2.0.0/lib/elasticsearch-2.0.0.jar
+7f861f357000-7f861f358000 ---p 00000000 00:00 0 
+7f861f358000-7f861f458000 rw-p 00000000 00:00 0                          [stack:18477]
+7f861f458000-7f861f45b000 ---p 00000000 00:00 0 
+7f861f45b000-7f861f559000 rw-p 00000000 00:00 0                          [stack:18476]
+7f861f559000-7f861f55c000 ---p 00000000 00:00 0 
+7f861f55c000-7f861f65a000 rw-p 00000000 00:00 0                          [stack:18475]
+7f861f65a000-7f861f65d000 ---p 00000000 00:00 0 
+7f861f65d000-7f861f75b000 rw-p 00000000 00:00 0                          [stack:18474]
+7f861f75b000-7f861f75e000 ---p 00000000 00:00 0 
+7f861f75e000-7f861f85c000 rw-p 00000000 00:00 0                          [stack:18473]
+7f861f85c000-7f861f85f000 ---p 00000000 00:00 0 
+7f861f85f000-7f861f95d000 rw-p 00000000 00:00 0                          [stack:18472]
+7f861f95d000-7f861fae6000 r--p 00000000 ca:01 1578                       /usr/lib/locale/locale-archive
+7f861fae6000-7f861fae9000 ---p 00000000 00:00 0 
+7f861fae9000-7f861fbe7000 rw-p 00000000 00:00 0                          [stack:18471]
+7f861fbe7000-7f861fbea000 ---p 00000000 00:00 0 
+7f861fbea000-7f861fce8000 rw-p 00000000 00:00 0                          [stack:18470]
+7f861fce8000-7f861fce9000 ---p 00000000 00:00 0 
+7f861fce9000-7f861fe32000 rw-p 00000000 00:00 0                          [stack:18469]
+7f861fe32000-7f861ffe4000 r--s 01d30000 ca:01 43677                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar
+7f861ffe4000-7f86200b5000 rw-p 00000000 00:00 0 
+7f86200b5000-7f86200b6000 ---p 00000000 00:00 0 
+7f86200b6000-7f8623b9f000 rw-p 00000000 00:00 0                          [stack:18468]
+7f8623b9f000-7f8623d1f000 rw-p 00000000 00:00 0 
+7f8623d1f000-7f8623d9f000 rw-p 00000000 00:00 0 
+7f8623d9f000-7f8623f1f000 rw-p 00000000 00:00 0 
+7f8623f1f000-7f8623f34000 rw-p 00000000 00:00 0 
+7f8623f34000-7f8623f72000 rw-p 00000000 00:00 0 
+7f8623f72000-7f8623f73000 rw-p 00000000 00:00 0 
+7f8623f73000-7f86242b3000 rwxp 00000000 00:00 0 
+7f86242c3000-7f8626f73000 rw-p 00000000 00:00 0 
+7f8626f73000-7f8626f7b000 r-xp 00000000 ca:01 43688                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f8626f7b000-7f862717a000 ---p 00008000 ca:01 43688                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f862717a000-7f862717b000 r--p 00007000 ca:01 43688                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f862717b000-7f862717c000 rw-p 00008000 ca:01 43688                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libzip.so
+7f862717c000-7f8627187000 r-xp 00000000 ca:01 396074                     /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f8627187000-7f8627386000 ---p 0000b000 ca:01 396074                     /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f8627386000-7f8627387000 r--p 0000a000 ca:01 396074                     /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f8627387000-7f8627388000 rw-p 0000b000 ca:01 396074                     /lib/x86_64-linux-gnu/libnss_files-2.19.so
+7f8627388000-7f8627393000 r-xp 00000000 ca:01 396076                     /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f8627393000-7f8627592000 ---p 0000b000 ca:01 396076                     /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f8627592000-7f8627593000 r--p 0000a000 ca:01 396076                     /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f8627593000-7f8627594000 rw-p 0000b000 ca:01 396076                     /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+7f8627594000-7f86275ab000 r-xp 00000000 ca:01 396071                     /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f86275ab000-7f86277aa000 ---p 00017000 ca:01 396071                     /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f86277aa000-7f86277ab000 r--p 00016000 ca:01 396071                     /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f86277ab000-7f86277ac000 rw-p 00017000 ca:01 396071                     /lib/x86_64-linux-gnu/libnsl-2.19.so
+7f86277ac000-7f86277ae000 rw-p 00000000 00:00 0 
+7f86277ae000-7f86277b7000 r-xp 00000000 ca:01 396072                     /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f86277b7000-7f86279b6000 ---p 00009000 ca:01 396072                     /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f86279b6000-7f86279b7000 r--p 00008000 ca:01 396072                     /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f86279b7000-7f86279b8000 rw-p 00009000 ca:01 396072                     /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+7f86279b8000-7f86279e3000 r-xp 00000000 ca:01 43696                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f86279e3000-7f8627be3000 ---p 0002b000 ca:01 43696                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f8627be3000-7f8627be4000 r--p 0002b000 ca:01 43696                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f8627be4000-7f8627be6000 rw-p 0002c000 ca:01 43696                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libjava.so
+7f8627be6000-7f8627bf6000 r-xp 00000000 ca:01 43712                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f8627bf6000-7f8627df5000 ---p 00010000 ca:01 43712                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f8627df5000-7f8627df7000 r--p 0000f000 ca:01 43712                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f8627df7000-7f8627df8000 rw-p 00011000 ca:01 43712                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/libverify.so
+7f8627df8000-7f8627dff000 r-xp 00000000 ca:01 396096                     /lib/x86_64-linux-gnu/librt-2.19.so
+7f8627dff000-7f8627ffe000 ---p 00007000 ca:01 396096                     /lib/x86_64-linux-gnu/librt-2.19.so
+7f8627ffe000-7f8627fff000 r--p 00006000 ca:01 396096                     /lib/x86_64-linux-gnu/librt-2.19.so
+7f8627fff000-7f8628000000 rw-p 00007000 ca:01 396096                     /lib/x86_64-linux-gnu/librt-2.19.so
+7f8628000000-7f8628efe000 rw-p 00000000 00:00 0 
+7f8628efe000-7f862c000000 ---p 00000000 00:00 0 
+7f862c000000-7f862c002000 r--s 00008000 ca:01 282292                     /var/www/elastic/elasticsearch-2.0.0/lib/asm-commons-4.1.jar
+7f862c002000-7f862c004000 r--s 00008000 ca:01 282275                     /var/www/elastic/elasticsearch-2.0.0/lib/joda-convert-1.2.jar
+7f862c004000-7f862c006000 r--s 00007000 ca:01 282260                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-memory-5.2.1.jar
+7f862c006000-7f862c00d000 r--s 00054000 ca:01 282257                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-backward-codecs-5.2.1.jar
+7f862c00d000-7f862c011000 r--s 00026000 ca:01 282267                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-misc-5.2.1.jar
+7f862c011000-7f862c01a000 r--s 00046000 ca:01 282279                     /var/www/elastic/elasticsearch-2.0.0/lib/jackson-dataformat-yaml-2.5.3.jar
+7f862c01a000-7f862c01c000 r--s 0000a000 ca:01 282281                     /var/www/elastic/elasticsearch-2.0.0/lib/jackson-dataformat-cbor-2.5.3.jar
+7f862c01c000-7f862c020000 r--s 000dc000 ca:01 282298                     /var/www/elastic/elasticsearch-2.0.0/lib/jna-4.1.0.jar
+7f862c020000-7f862c029000 r--s 0006f000 ca:01 282296                     /var/www/elastic/elasticsearch-2.0.0/lib/log4j-1.2.17.jar
+7f862c029000-7f862c02c000 r--s 00020000 ca:01 282262                     /var/www/elastic/elasticsearch-2.0.0/lib/lucene-highlighter-5.2.1.jar
+7f862c02c000-7f862c02e000 r--s 00006000 ca:01 44262                      /usr/share/java/java-atk-wrapper.jar
+7f862c02e000-7f862c032000 r--s 00034000 ca:01 43671                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+7f862c032000-7f862c036000 r--s 00085000 ca:01 43669                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/localedata.jar
+7f862c036000-7f862c03a000 r--s 0003c000 ca:01 43672                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+7f862c03a000-7f862c03c000 r--s 00012000 ca:01 43668                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/zipfs.jar
+7f862c03c000-7f862c051000 rw-p 00000000 00:00 0 
+7f862c051000-7f862c090000 rw-p 00000000 00:00 0 
+7f862c090000-7f862c0a6000 r-xp 00000000 ca:01 396054                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f862c0a6000-7f862c2a5000 ---p 00016000 ca:01 396054                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f862c2a5000-7f862c2a6000 rw-p 00015000 ca:01 396054                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7f862c2a6000-7f862c3ab000 r-xp 00000000 ca:01 396063                     /lib/x86_64-linux-gnu/libm-2.19.so
+7f862c3ab000-7f862c5aa000 ---p 00105000 ca:01 396063                     /lib/x86_64-linux-gnu/libm-2.19.so
+7f862c5aa000-7f862c5ab000 r--p 00104000 ca:01 396063                     /lib/x86_64-linux-gnu/libm-2.19.so
+7f862c5ab000-7f862c5ac000 rw-p 00105000 ca:01 396063                     /lib/x86_64-linux-gnu/libm-2.19.so
+7f862c5ac000-7f862c692000 r-xp 00000000 ca:01 26656                      /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7f862c692000-7f862c891000 ---p 000e6000 ca:01 26656                      /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7f862c891000-7f862c899000 r--p 000e5000 ca:01 26656                      /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7f862c899000-7f862c89b000 rw-p 000ed000 ca:01 26656                      /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+7f862c89b000-7f862c8b0000 rw-p 00000000 00:00 0 
+7f862c8b0000-7f862d3d4000 r-xp 00000000 ca:01 43703                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f862d3d4000-7f862d5d3000 ---p 00b24000 ca:01 43703                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f862d5d3000-7f862d66d000 r--p 00b23000 ca:01 43703                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f862d66d000-7f862d690000 rw-p 00bbd000 ca:01 43703                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f862d690000-7f862d6be000 rw-p 00000000 00:00 0 
+7f862d6be000-7f862d6d6000 r-xp 00000000 ca:01 396113                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f862d6d6000-7f862d8d5000 ---p 00018000 ca:01 396113                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f862d8d5000-7f862d8d6000 r--p 00017000 ca:01 396113                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f862d8d6000-7f862d8d7000 rw-p 00018000 ca:01 396113                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7f862d8d7000-7f862d8f0000 r-xp 00000000 ca:01 396093                     /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f862d8f0000-7f862daef000 ---p 00019000 ca:01 396093                     /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f862daef000-7f862daf0000 r--p 00018000 ca:01 396093                     /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f862daf0000-7f862daf1000 rw-p 00019000 ca:01 396093                     /lib/x86_64-linux-gnu/libpthread-2.19.so
+7f862daf1000-7f862daf5000 rw-p 00000000 00:00 0 
+7f862daf5000-7f862daf8000 r-xp 00000000 ca:01 396049                     /lib/x86_64-linux-gnu/libdl-2.19.so
+7f862daf8000-7f862dcf7000 ---p 00003000 ca:01 396049                     /lib/x86_64-linux-gnu/libdl-2.19.so
+7f862dcf7000-7f862dcf8000 r--p 00002000 ca:01 396049                     /lib/x86_64-linux-gnu/libdl-2.19.so
+7f862dcf8000-7f862dcf9000 rw-p 00003000 ca:01 396049                     /lib/x86_64-linux-gnu/libdl-2.19.so
+7f862dcf9000-7f862deb4000 r-xp 00000000 ca:01 396040                     /lib/x86_64-linux-gnu/libc-2.19.so
+7f862deb4000-7f862e0b3000 ---p 001bb000 ca:01 396040                     /lib/x86_64-linux-gnu/libc-2.19.so
+7f862e0b3000-7f862e0b7000 r--p 001ba000 ca:01 396040                     /lib/x86_64-linux-gnu/libc-2.19.so
+7f862e0b7000-7f862e0b9000 rw-p 001be000 ca:01 396040                     /lib/x86_64-linux-gnu/libc-2.19.so
+7f862e0b9000-7f862e0be000 rw-p 00000000 00:00 0 
+7f862e0be000-7f862e0cb000 r-xp 00000000 ca:01 43714                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f862e0cb000-7f862e2ca000 ---p 0000d000 ca:01 43714                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f862e2ca000-7f862e2cb000 r--p 0000c000 ca:01 43714                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f862e2cb000-7f862e2cc000 rw-p 0000d000 ca:01 43714                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/jli/libjli.so
+7f862e2cc000-7f862e2ef000 r-xp 00000000 ca:01 396030                     /lib/x86_64-linux-gnu/ld-2.19.so
+7f862e2ef000-7f862e2f0000 r--s 0000b000 ca:01 282291                     /var/www/elastic/elasticsearch-2.0.0/lib/asm-4.1.jar
+7f862e2f0000-7f862e2f3000 r--s 0000f000 ca:01 43670                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+7f862e2f3000-7f862e328000 rw-p 00000000 00:00 0 
+7f862e328000-7f862e3db000 rw-p 00000000 00:00 0 
+7f862e3db000-7f862e3de000 ---p 00000000 00:00 0 
+7f862e3de000-7f862e4e1000 rw-p 00000000 00:00 0                          [stack:18467]
+7f862e4e1000-7f862e4e2000 r--s 00002000 ca:01 43673                      /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext/dnsns.jar
+7f862e4e2000-7f862e4ea000 rw-s 00000000 ca:01 50647                      /tmp/hsperfdata_ubuntu/18455
+7f862e4ea000-7f862e4eb000 rw-p 00000000 00:00 0 
+7f862e4eb000-7f862e4ec000 r--p 00000000 00:00 0 
+7f862e4ec000-7f862e4ee000 rw-p 00000000 00:00 0 
+7f862e4ee000-7f862e4ef000 r--p 00022000 ca:01 396030                     /lib/x86_64-linux-gnu/ld-2.19.so
+7f862e4ef000-7f862e4f0000 rw-p 00023000 ca:01 396030                     /lib/x86_64-linux-gnu/ld-2.19.so
+7f862e4f0000-7f862e4f1000 rw-p 00000000 00:00 0 
+7ffe6c713000-7ffe6c734000 rw-p 00000000 00:00 0                          [stack]
+7ffe6c7fd000-7ffe6c7ff000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xms256m -Xmx1g -Djava.awt.headless=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -XX:+DisableExplicitGC -Dfile.encoding=UTF-8 -Djna.nosys=true -Des.path.home=/var/www/elastic/elasticsearch-2.0.0 
+java_command: org.elasticsearch.bootstrap.Elasticsearch start
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x954820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x954820], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x7cb150], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x7cb150], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x7cb150], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x7cb150], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x7caff0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x7cb1d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x7cb1d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x7cb1d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x7cb1d0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTRAP: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Ubuntu 14.04 (trusty)
+uname:Linux 3.13.0-67-generic #110-Ubuntu SMP Fri Oct 23 13:24:41 UTC 2015 x86_64
+libc:glibc 2.19 NPTL 2.19 
+rlimit: STACK 8192k, CORE 0k, NPROC 7859, NOFILE 4096, AS infinity
+load average:1.10 0.49 0.30
+
+/proc/meminfo:
+MemTotal:        1016328 kB
+MemFree:           50592 kB
+Buffers:             208 kB
+Cached:            24760 kB
+SwapCached:            0 kB
+Active:           893996 kB
+Inactive:          23304 kB
+Active(anon):     893348 kB
+Inactive(anon):    11024 kB
+Active(file):        648 kB
+Inactive(file):    12280 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               152 kB
+Writeback:             0 kB
+AnonPages:        892364 kB
+Mapped:            13160 kB
+Shmem:             12008 kB
+Slab:              22868 kB
+SReclaimable:       9680 kB
+SUnreclaim:        13188 kB
+KernelStack:        2136 kB
+PageTables:        10104 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      508164 kB
+Committed_AS:    1668432 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:        4824 kB
+VmallocChunk:   34359727196 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    567296 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       28672 kB
+DirectMap2M:     1150976 kB
+
+
+CPU:total 1 (1 cores per cpu, 1 threads per core) family 6 model 62 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, erms, tsc
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 0x416
+cpu MHz		: 2500.098
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology eagerfpu pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.19
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 1016328k(50592k free), swap 0k(0k free)
+
+vm_info: OpenJDK 64-Bit Server VM (24.85-b03) for linux-amd64 JRE (1.7.0_85-b01), built on Oct 22 2015 06:46:50 by "buildd" with gcc 4.8.2
+
+time: Fri Nov 27 07:09:32 2015
+elapsed time: 199 seconds
+

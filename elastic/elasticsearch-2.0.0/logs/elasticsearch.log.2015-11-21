@@ -1,0 +1,331 @@
+[2015-11-21 00:00:00,766][INFO ][cluster.metadata         ] [Mad Dog Rassitano] [.marvel-es-2015.11.21] creating index, cause [auto(bulk api)], templates [.marvel-es], shards [1]/[1], mappings [indices_stats, cluster_stats, node_stats, index_recovery, shards, _default_, index_stats, cluster_state, cluster_info]
+[2015-11-21 00:00:00,953][INFO ][cluster.metadata         ] [Mad Dog Rassitano] [.marvel-es-2015.11.21] update_mapping [indices_stats]
+[2015-11-21 00:00:00,969][INFO ][cluster.metadata         ] [Mad Dog Rassitano] [.marvel-es-2015.11.21] update_mapping [cluster_stats]
+[2015-11-21 00:00:00,990][INFO ][cluster.metadata         ] [Mad Dog Rassitano] [.marvel-es-2015.11.21] update_mapping [node_stats]
+[2015-11-21 00:10:10,373][INFO ][cluster.metadata         ] [Mad Dog Rassitano] [logstash-2015.11.21] creating index, cause [auto(bulk api)], templates [logstash], shards [5]/[1], mappings [logs, _default_]
+[2015-11-21 00:10:10,536][INFO ][cluster.metadata         ] [Mad Dog Rassitano] [logstash-2015.11.21] update_mapping [logs]
+[2015-11-21 00:25:24,915][ERROR][marvel.agent.collector.indices] [Mad Dog Rassitano] collector [{}] timed out when collecting data
+[2015-11-21 01:43:45,087][DEBUG][action.search.type       ] [Mad Dog Rassitano] [.kibana][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[6], s[STARTED], a[id=F7uE8d15TaqrDCMDz0EoeA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@111d6949] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 02:04:21,530][ERROR][marvel.agent.collector.cluster] [Mad Dog Rassitano] collector [{}] timed out when collecting data
+[2015-11-21 01:45:12,093][DEBUG][action.search.type       ] [Mad Dog Rassitano] [.marvel-es-2015.11.20][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=v0qHHmvdRZO-1ZvYRihPIw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@111d6949] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 02:36:02,604][ERROR][marvel.agent.collector.cluster] [Mad Dog Rassitano] collector [{}] timed out when collecting data
+[2015-11-21 02:28:41,181][DEBUG][action.search.type       ] [Mad Dog Rassitano] [.marvel-es-2015.11.21][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=4O1IympuSjyMp-TrQXz31A]: Failed to execute [org.elasticsearch.action.search.SearchRequest@111d6949] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 03:20:29,051][ERROR][marvel.agent.collector.indices] [Mad Dog Rassitano] collector [{}] timed out when collecting data
+[2015-11-21 03:07:20,417][DEBUG][action.search.type       ] [Mad Dog Rassitano] [.marvel-es-data][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=ogY50wY8SmCzTSBaW2s9-Q]: Failed to execute [org.elasticsearch.action.search.SearchRequest@111d6949] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 03:23:21,222][DEBUG][action.search.type       ] [Mad Dog Rassitano] [logstash-2015.11.20][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[6], s[STARTED], a[id=Ydzb1lygQjqxc9OmIUarlA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@111d6949] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 03:52:10,523][DEBUG][action.search.type       ] [Mad Dog Rassitano] [.kibana][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[6], s[STARTED], a[id=F7uE8d15TaqrDCMDz0EoeA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@264a75d4] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 05:05:55,672][DEBUG][action.search.type       ] [Mad Dog Rassitano] [logstash-2015.11.21][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=_VAT3yQUTHuM7moVqjob7g]: Failed to execute [org.elasticsearch.action.search.SearchRequest@111d6949] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 05:12:41,167][DEBUG][action.search.type       ] [Mad Dog Rassitano] [.marvel-es-2015.11.20][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=v0qHHmvdRZO-1ZvYRihPIw]: Failed to execute [org.elasticsearch.action.search.SearchRequest@264a75d4] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 05:18:50,198][DEBUG][action.search.type       ] [Mad Dog Rassitano] [logstash-2015.11.20][1], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[6], s[STARTED], a[id=6VjgN8VUSVa8J6vhVGDA2g]: Failed to execute [org.elasticsearch.action.search.SearchRequest@111d6949] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 05:35:17,715][DEBUG][action.search.type       ] [Mad Dog Rassitano] [.marvel-es-2015.11.21][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=4O1IympuSjyMp-TrQXz31A]: Failed to execute [org.elasticsearch.action.search.SearchRequest@264a75d4] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 16:19:21,717][DEBUG][action.search.type       ] [Mad Dog Rassitano] [.marvel-es-data][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=ogY50wY8SmCzTSBaW2s9-Q]: Failed to execute [org.elasticsearch.action.search.SearchRequest@264a75d4] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 17:05:06,666][DEBUG][action.search.type       ] [Mad Dog Rassitano] [logstash-2015.11.21][1], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=Vcle20SNQlCVFNSBgOCEeA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@111d6949] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 17:32:25,123][DEBUG][action.search.type       ] [Mad Dog Rassitano] [logstash-2015.11.20][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[6], s[STARTED], a[id=Ydzb1lygQjqxc9OmIUarlA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@264a75d4] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 18:28:40,490][DEBUG][action.search.type       ] [Mad Dog Rassitano] [logstash-2015.11.21][0], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=_VAT3yQUTHuM7moVqjob7g]: Failed to execute [org.elasticsearch.action.search.SearchRequest@264a75d4] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 19:07:18,307][DEBUG][action.search.type       ] [Mad Dog Rassitano] [logstash-2015.11.20][1], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[6], s[STARTED], a[id=6VjgN8VUSVa8J6vhVGDA2g]: Failed to execute [org.elasticsearch.action.search.SearchRequest@264a75d4] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 19:43:24,466][DEBUG][action.search.type       ] [Mad Dog Rassitano] [logstash-2015.11.21][1], node[k7IKle6MSmGI2W5O-LBWWQ], [P], v[2], s[STARTED], a[id=Vcle20SNQlCVFNSBgOCEeA]: Failed to execute [org.elasticsearch.action.search.SearchRequest@264a75d4] lastShard [true]
+RemoteTransportException[[Mad Dog Rassitano][172.31.29.229:9300][indices:data/read/search[phase/query]]]; nested: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+Caused by: SearchParseException[failed to parse search source [{"size":1,"script_fields": {"exp": {"script":"java.lang.Math.class.forName(\"java.io.BufferedReader\").getConstructor(java.io.Reader.class).newInstance(java.lang.Math.class.forName(\"java.io.InputStreamReader\").getConstructor(java.io.InputStream.class).newInstance(java.lang.Math.class.forName(\"java.lang.Runtime\").getRuntime().exec(\"echo qq952135763\").getInputStream())).readLines()","lang": "groovy"}}}]]; nested: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:860)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:663)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:632)
+	at org.elasticsearch.search.SearchService.executeQueryPhase(SearchService.java:374)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:368)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryTransportHandler.messageReceived(SearchServiceTransportAction.java:365)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: ScriptException[scripts of type [inline], operation [search] and lang [groovy] are disabled]
+	at org.elasticsearch.script.ScriptService.compile(ScriptService.java:245)
+	at org.elasticsearch.script.ScriptService.search(ScriptService.java:456)
+	at org.elasticsearch.search.fetch.script.ScriptFieldsParseElement.parse(ScriptFieldsParseElement.java:101)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:843)
+	... 10 more
+[2015-11-21 19:42:47,469][WARN ][monitor.jvm              ] [Mad Dog Rassitano] [gc][young][65078][3243] duration [10h], collections [1]/[14h], total [10h]/[10h], memory [177.3mb]->[122.6mb]/[1015.6mb], all_pools {[young] [62.9mb]->[5.5mb]/[66.5mb]}{[survivor] [1.5mb]->[4.2mb]/[8.3mb]}{[old] [112.8mb]->[112.8mb]/[940.8mb]}

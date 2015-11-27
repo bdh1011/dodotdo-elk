@@ -1,0 +1,184 @@
+[2015-11-27 06:46:25,695][INFO ][node                     ] [Nicole St. Croix] version[2.0.0], pid[17797], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-27 06:46:25,697][INFO ][node                     ] [Nicole St. Croix] initializing ...
+[2015-11-27 06:46:26,257][INFO ][plugins                  ] [Nicole St. Croix] loaded [marvel, license], sites []
+[2015-11-27 06:46:26,314][INFO ][env                      ] [Nicole St. Croix] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [4.5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-27 06:46:29,189][INFO ][node                     ] [Nicole St. Croix] initialized
+[2015-11-27 06:46:29,190][INFO ][node                     ] [Nicole St. Croix] starting ...
+[2015-11-27 06:46:29,263][WARN ][common.network           ] [Nicole St. Croix] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 06:46:29,264][INFO ][transport                ] [Nicole St. Croix] publish_address {172.31.29.229:9300}, bound_addresses {[::]:9300}
+[2015-11-27 06:46:29,274][INFO ][discovery                ] [Nicole St. Croix] elasticsearch/1u-gYVvWRmGKEKgYxvkfow
+[2015-11-27 06:46:32,331][INFO ][cluster.service          ] [Nicole St. Croix] new_master {Nicole St. Croix}{1u-gYVvWRmGKEKgYxvkfow}{172.31.29.229}{172.31.29.229:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-11-27 06:46:32,429][WARN ][common.network           ] [Nicole St. Croix] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 06:46:32,430][INFO ][http                     ] [Nicole St. Croix] publish_address {172.31.29.229:9200}, bound_addresses {[::]:9200}
+[2015-11-27 06:46:32,430][INFO ][node                     ] [Nicole St. Croix] started
+[2015-11-27 06:46:32,614][INFO ][license.plugin.core      ] [Nicole St. Croix] license [60c49c92-1d2c-499d-a7b7-dbb6db982d60] - valid
+[2015-11-27 06:46:32,619][ERROR][license.plugin.core      ] [Nicole St. Croix] 
+#
+# License will expire on [Sunday, December 20, 2015]. If you have a new license, please update it.
+# Otherwise, please reach out to your support contact.
+# 
+# Commercial plugins operate with reduced functionality on license expiration:
+# - marvel
+#  - The agent will stop collecting cluster and indices metrics
+[2015-11-27 06:46:32,674][INFO ][gateway                  ] [Nicole St. Croix] recovered [6] indices into cluster_state
+[2015-11-27 06:46:39,572][INFO ][cluster.metadata         ] [Nicole St. Croix] [.marvel-es-2015.11.27] creating index, cause [auto(bulk api)], templates [.marvel-es], shards [1]/[1], mappings [cluster_stats, indices_stats, node_stats, index_recovery, shards, _default_, index_stats, cluster_state, cluster_info]
+[2015-11-27 06:46:39,710][INFO ][cluster.metadata         ] [Nicole St. Croix] [.marvel-es-2015.11.27] update_mapping [cluster_stats]
+[2015-11-27 06:46:39,754][INFO ][cluster.metadata         ] [Nicole St. Croix] [.marvel-es-2015.11.27] update_mapping [indices_stats]
+[2015-11-27 06:46:39,888][INFO ][cluster.metadata         ] [Nicole St. Croix] [.marvel-es-2015.11.27] update_mapping [node_stats]
+[2015-11-27 06:54:17,379][INFO ][node                     ] [Wendell Vaughn] version[2.0.0], pid[18069], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-27 06:54:17,380][INFO ][node                     ] [Wendell Vaughn] initializing ...
+[2015-11-27 06:54:17,896][INFO ][plugins                  ] [Wendell Vaughn] loaded [marvel, license], sites []
+[2015-11-27 06:54:17,955][INFO ][env                      ] [Wendell Vaughn] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [4.5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-27 06:54:20,900][INFO ][node                     ] [Wendell Vaughn] initialized
+[2015-11-27 06:54:20,902][INFO ][node                     ] [Wendell Vaughn] starting ...
+[2015-11-27 06:54:20,979][WARN ][common.network           ] [Wendell Vaughn] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 06:54:20,979][INFO ][transport                ] [Wendell Vaughn] publish_address {172.31.29.229:9300}, bound_addresses {[::]:9300}
+[2015-11-27 06:54:20,988][INFO ][discovery                ] [Wendell Vaughn] elasticsearch/hMutDE9VSDWyO6AsYhdvAw
+[2015-11-27 06:54:24,028][INFO ][cluster.service          ] [Wendell Vaughn] new_master {Wendell Vaughn}{hMutDE9VSDWyO6AsYhdvAw}{172.31.29.229}{172.31.29.229:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-11-27 06:54:24,112][WARN ][common.network           ] [Wendell Vaughn] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 06:54:24,112][INFO ][http                     ] [Wendell Vaughn] publish_address {172.31.29.229:9200}, bound_addresses {[::]:9200}
+[2015-11-27 06:54:24,113][INFO ][node                     ] [Wendell Vaughn] started
+[2015-11-27 06:54:24,317][INFO ][license.plugin.core      ] [Wendell Vaughn] license [60c49c92-1d2c-499d-a7b7-dbb6db982d60] - valid
+[2015-11-27 06:54:24,321][ERROR][license.plugin.core      ] [Wendell Vaughn] 
+#
+# License will expire on [Sunday, December 20, 2015]. If you have a new license, please update it.
+# Otherwise, please reach out to your support contact.
+# 
+# Commercial plugins operate with reduced functionality on license expiration:
+# - marvel
+#  - The agent will stop collecting cluster and indices metrics
+[2015-11-27 06:54:24,393][INFO ][gateway                  ] [Wendell Vaughn] recovered [7] indices into cluster_state
+[2015-11-27 07:00:49,848][INFO ][node                     ] [Brain Drain] version[2.0.0], pid[18313], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-27 07:00:49,849][INFO ][node                     ] [Brain Drain] initializing ...
+[2015-11-27 07:00:50,374][INFO ][plugins                  ] [Brain Drain] loaded [marvel, license], sites []
+[2015-11-27 07:00:50,430][INFO ][env                      ] [Brain Drain] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [4.5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-27 07:00:53,303][INFO ][node                     ] [Brain Drain] initialized
+[2015-11-27 07:00:53,303][INFO ][node                     ] [Brain Drain] starting ...
+[2015-11-27 07:00:53,386][WARN ][common.network           ] [Brain Drain] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:00:53,387][INFO ][transport                ] [Brain Drain] publish_address {172.31.29.229:9300}, bound_addresses {[::]:9300}
+[2015-11-27 07:00:53,399][INFO ][discovery                ] [Brain Drain] elasticsearch/cLRL3EbDT42LwGmlJ1koag
+[2015-11-27 07:00:56,442][INFO ][cluster.service          ] [Brain Drain] new_master {Brain Drain}{cLRL3EbDT42LwGmlJ1koag}{172.31.29.229}{172.31.29.229:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-11-27 07:00:56,528][WARN ][common.network           ] [Brain Drain] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:00:56,528][INFO ][http                     ] [Brain Drain] publish_address {172.31.29.229:9200}, bound_addresses {[::]:9200}
+[2015-11-27 07:00:56,528][INFO ][node                     ] [Brain Drain] started
+[2015-11-27 07:00:56,746][INFO ][license.plugin.core      ] [Brain Drain] license [60c49c92-1d2c-499d-a7b7-dbb6db982d60] - valid
+[2015-11-27 07:00:56,752][ERROR][license.plugin.core      ] [Brain Drain] 
+#
+# License will expire on [Sunday, December 20, 2015]. If you have a new license, please update it.
+# Otherwise, please reach out to your support contact.
+# 
+# Commercial plugins operate with reduced functionality on license expiration:
+# - marvel
+#  - The agent will stop collecting cluster and indices metrics
+[2015-11-27 07:00:56,823][INFO ][gateway                  ] [Brain Drain] recovered [7] indices into cluster_state
+[2015-11-27 07:01:35,157][INFO ][rest.suppressed          ] /.kibana/index-pattern/[logstash-]YYYY.MM.DD Params: {id=[logstash-]YYYY.MM.DD, index=.kibana, op_type=create, type=index-pattern}
+[.kibana][[.kibana][0]] DocumentAlreadyExistsException[[index-pattern][[logstash-]YYYY.MM.DD]: document already exists]
+	at org.elasticsearch.index.engine.InternalEngine.innerCreateNoLock(InternalEngine.java:411)
+	at org.elasticsearch.index.engine.InternalEngine.innerCreate(InternalEngine.java:369)
+	at org.elasticsearch.index.engine.InternalEngine.create(InternalEngine.java:341)
+	at org.elasticsearch.index.shard.IndexShard.create(IndexShard.java:517)
+	at org.elasticsearch.index.engine.Engine$Create.execute(Engine.java:789)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction.executeIndexRequestOnPrimary(TransportReplicationAction.java:1073)
+	at org.elasticsearch.action.index.TransportIndexAction.shardOperationOnPrimary(TransportIndexAction.java:170)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase.performOnPrimary(TransportReplicationAction.java:579)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$PrimaryPhase$1.doRun(TransportReplicationAction.java:452)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-11-27 07:02:48,933][INFO ][node                     ] [Black Goliath] version[2.0.0], pid[18382], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-27 07:02:48,934][INFO ][node                     ] [Black Goliath] initializing ...
+[2015-11-27 07:02:49,443][INFO ][plugins                  ] [Black Goliath] loaded [marvel, license], sites []
+[2015-11-27 07:02:49,492][INFO ][env                      ] [Black Goliath] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [4.5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-27 07:02:52,119][INFO ][node                     ] [Black Goliath] initialized
+[2015-11-27 07:02:52,122][INFO ][node                     ] [Black Goliath] starting ...
+[2015-11-27 07:02:52,192][WARN ][common.network           ] [Black Goliath] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:02:52,192][INFO ][transport                ] [Black Goliath] publish_address {172.31.29.229:9300}, bound_addresses {[::]:9300}
+[2015-11-27 07:02:52,201][INFO ][discovery                ] [Black Goliath] elasticsearch/h95lldlUS_W5w94EgU4MDQ
+[2015-11-27 07:02:55,252][INFO ][cluster.service          ] [Black Goliath] new_master {Black Goliath}{h95lldlUS_W5w94EgU4MDQ}{172.31.29.229}{172.31.29.229:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-11-27 07:02:55,344][WARN ][common.network           ] [Black Goliath] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:02:55,344][INFO ][http                     ] [Black Goliath] publish_address {172.31.29.229:9200}, bound_addresses {[::]:9200}
+[2015-11-27 07:02:55,345][INFO ][node                     ] [Black Goliath] started
+[2015-11-27 07:02:55,633][INFO ][license.plugin.core      ] [Black Goliath] license [60c49c92-1d2c-499d-a7b7-dbb6db982d60] - valid
+[2015-11-27 07:02:55,636][ERROR][license.plugin.core      ] [Black Goliath] 
+#
+# License will expire on [Sunday, December 20, 2015]. If you have a new license, please update it.
+# Otherwise, please reach out to your support contact.
+# 
+# Commercial plugins operate with reduced functionality on license expiration:
+# - marvel
+#  - The agent will stop collecting cluster and indices metrics
+[2015-11-27 07:02:55,714][INFO ][gateway                  ] [Black Goliath] recovered [7] indices into cluster_state
+[2015-11-27 07:06:14,341][INFO ][node                     ] [Chameleon] version[2.0.0], pid[18455], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-27 07:06:14,343][INFO ][node                     ] [Chameleon] initializing ...
+[2015-11-27 07:06:14,852][INFO ][plugins                  ] [Chameleon] loaded [marvel, license], sites []
+[2015-11-27 07:06:14,899][INFO ][env                      ] [Chameleon] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [4.5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-27 07:06:17,616][INFO ][node                     ] [Chameleon] initialized
+[2015-11-27 07:06:17,617][INFO ][node                     ] [Chameleon] starting ...
+[2015-11-27 07:06:17,690][WARN ][common.network           ] [Chameleon] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:06:17,690][INFO ][transport                ] [Chameleon] publish_address {172.31.29.229:9300}, bound_addresses {[::]:9300}
+[2015-11-27 07:06:17,700][INFO ][discovery                ] [Chameleon] elasticsearch/TO5gQRjTRc2GWbJ7k4W70w
+[2015-11-27 07:06:20,757][INFO ][cluster.service          ] [Chameleon] new_master {Chameleon}{TO5gQRjTRc2GWbJ7k4W70w}{172.31.29.229}{172.31.29.229:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-11-27 07:06:20,846][WARN ][common.network           ] [Chameleon] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:06:20,846][INFO ][http                     ] [Chameleon] publish_address {172.31.29.229:9200}, bound_addresses {[::]:9200}
+[2015-11-27 07:06:20,846][INFO ][node                     ] [Chameleon] started
+[2015-11-27 07:06:21,064][INFO ][license.plugin.core      ] [Chameleon] license [60c49c92-1d2c-499d-a7b7-dbb6db982d60] - valid
+[2015-11-27 07:06:21,069][ERROR][license.plugin.core      ] [Chameleon] 
+#
+# License will expire on [Sunday, December 20, 2015]. If you have a new license, please update it.
+# Otherwise, please reach out to your support contact.
+# 
+# Commercial plugins operate with reduced functionality on license expiration:
+# - marvel
+#  - The agent will stop collecting cluster and indices metrics
+[2015-11-27 07:06:21,140][INFO ][gateway                  ] [Chameleon] recovered [7] indices into cluster_state
+[2015-11-27 07:10:00,967][INFO ][node                     ] [Leonus] version[2.0.0], pid[18547], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-27 07:10:00,969][INFO ][node                     ] [Leonus] initializing ...
+[2015-11-27 07:10:01,456][INFO ][plugins                  ] [Leonus] loaded [marvel, license], sites []
+[2015-11-27 07:10:01,504][INFO ][env                      ] [Leonus] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [4.5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-27 07:10:04,103][INFO ][node                     ] [Leonus] initialized
+[2015-11-27 07:10:04,106][INFO ][node                     ] [Leonus] starting ...
+[2015-11-27 07:10:04,176][WARN ][common.network           ] [Leonus] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:10:04,176][INFO ][transport                ] [Leonus] publish_address {172.31.29.229:9300}, bound_addresses {[::]:9300}
+[2015-11-27 07:10:04,185][INFO ][discovery                ] [Leonus] elasticsearch/zzwzSZkmTMqgFoQk9tJYiA
+[2015-11-27 07:10:07,231][INFO ][cluster.service          ] [Leonus] new_master {Leonus}{zzwzSZkmTMqgFoQk9tJYiA}{172.31.29.229}{172.31.29.229:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-11-27 07:10:07,319][WARN ][common.network           ] [Leonus] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:10:07,319][INFO ][http                     ] [Leonus] publish_address {172.31.29.229:9200}, bound_addresses {[::]:9200}
+[2015-11-27 07:10:07,319][INFO ][node                     ] [Leonus] started
+[2015-11-27 07:10:07,532][INFO ][license.plugin.core      ] [Leonus] license [60c49c92-1d2c-499d-a7b7-dbb6db982d60] - valid
+[2015-11-27 07:10:07,536][ERROR][license.plugin.core      ] [Leonus] 
+#
+# License will expire on [Sunday, December 20, 2015]. If you have a new license, please update it.
+# Otherwise, please reach out to your support contact.
+# 
+# Commercial plugins operate with reduced functionality on license expiration:
+# - marvel
+#  - The agent will stop collecting cluster and indices metrics
+[2015-11-27 07:10:07,605][INFO ][gateway                  ] [Leonus] recovered [7] indices into cluster_state
+[2015-11-27 07:13:41,994][INFO ][node                     ] [Domina] version[2.0.0], pid[18708], build[de54438/2015-10-22T08:09:48Z]
+[2015-11-27 07:13:41,996][INFO ][node                     ] [Domina] initializing ...
+[2015-11-27 07:13:42,509][INFO ][plugins                  ] [Domina] loaded [marvel, license], sites []
+[2015-11-27 07:13:42,574][INFO ][env                      ] [Domina] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [4.5gb], net total_space [7.7gb], spins? [no], types [ext4]
+[2015-11-27 07:13:45,344][INFO ][node                     ] [Domina] initialized
+[2015-11-27 07:13:45,345][INFO ][node                     ] [Domina] starting ...
+[2015-11-27 07:13:45,416][WARN ][common.network           ] [Domina] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:13:45,417][INFO ][transport                ] [Domina] publish_address {172.31.29.229:9300}, bound_addresses {[::]:9300}
+[2015-11-27 07:13:45,426][INFO ][discovery                ] [Domina] elasticsearch/kSXS3XOOT9CoF0x345ZhSg
+[2015-11-27 07:13:48,477][INFO ][cluster.service          ] [Domina] new_master {Domina}{kSXS3XOOT9CoF0x345ZhSg}{172.31.29.229}{172.31.29.229:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-11-27 07:13:48,573][WARN ][common.network           ] [Domina] publish address: {0.0.0.0} is a wildcard address, falling back to first non-loopback: {172.31.29.229}
+[2015-11-27 07:13:48,573][INFO ][http                     ] [Domina] publish_address {172.31.29.229:9200}, bound_addresses {[::]:9200}
+[2015-11-27 07:13:48,573][INFO ][node                     ] [Domina] started
+[2015-11-27 07:13:48,789][INFO ][license.plugin.core      ] [Domina] license [60c49c92-1d2c-499d-a7b7-dbb6db982d60] - valid
+[2015-11-27 07:13:48,793][ERROR][license.plugin.core      ] [Domina] 
+#
+# License will expire on [Sunday, December 20, 2015]. If you have a new license, please update it.
+# Otherwise, please reach out to your support contact.
+# 
+# Commercial plugins operate with reduced functionality on license expiration:
+# - marvel
+#  - The agent will stop collecting cluster and indices metrics
+[2015-11-27 07:13:48,865][INFO ][gateway                  ] [Domina] recovered [7] indices into cluster_state
+[2015-11-27 07:16:48,039][INFO ][node                     ] [Domina] stopping ...
+[2015-11-27 07:16:48,214][INFO ][node                     ] [Domina] stopped
+[2015-11-27 07:16:48,214][INFO ][node                     ] [Domina] closing ...
+[2015-11-27 07:16:48,227][INFO ][node                     ] [Domina] closed
